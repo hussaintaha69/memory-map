@@ -1,0 +1,208 @@
+[
+  {
+    "city": "Delhi",
+    "lat": 28.6139,
+    "lng": 77.2090,
+    "description": "Click to view locations",
+    "locations": [
+      {
+        "name": "Music and Mountains, GK",
+        "lat": 28.5418777,
+        "lng": 77.2384553,
+        "description": "As harrowing as the date turned out to be, I wouldn't want to forget a single second of it. Everything was perfect, I had you by my side, you looked beautiful, and the food was amazing.",
+        "albumLink": "https://photos.app.goo.gl/SQWKvpFLrM19rkEo9"
+      },
+      {
+        "name": "Big Chill Cafe, Kailash Colony Market, GK1",
+        "lat": 28.5375,
+        "lng": 77.2431,
+        "description": "Probably our most visited food chain, maybe after Chili's?",
+        "albumLink": "https://photos.app.goo.gl/16HraN6WFw1Z2hft5"
+      },
+      {
+        "name": "JNU",
+        "lat": 28.55181,
+        "lng": 77.17713,
+        "description": "I could be considered a JNU student. Miss the campus though.",
+        "albumLink": "https://photos.app.goo.gl/shZn9FVHaZPHzvJV6"
+      },
+      {
+        "name": "Kiran Nadar Museum of Art, Saket",
+        "lat": 28.5245,
+        "lng": 77.2101,
+        "description": "Cute date turned into big fight later because of me :(",
+        "albumLink": "https://photos.app.goo.gl/o6UakMtkCdReH1v76"
+      },
+      {
+        "name": "Lama, Hauz Khas",
+        "lat": 28.549507,
+        "lng": 77.203613,
+        "description": "Major missing ema datshi",
+        "albumLink": "https://photos.app.goo.gl/NN2kbTZV7hBfzNXLA"
+      },
+      {
+        "name": "Leos Pizza, Vasant Vihar",
+        "lat": 28.5375,
+        "lng": 77.1765,
+        "description": "Remember the cherry tomato heart I laid out for you? ",
+        "albumLink": "https://photos.app.goo.gl/2UW9BZHWkAKGAHzX8"
+      },
+      {
+        "name": "L' Opera, Vasant Vihar",
+        "lat": 28.5377,
+        "lng": 77.1767,
+        "description": "Had the most expensive pastry of our lives.",
+        "albumLink": "https://photos.app.goo.gl/zbeYqNrWmxuCPjGw5"
+      },
+      {
+        "name": "Sundar Nursery",
+        "lat": 28.5794,
+        "lng": 77.2500,
+        "description": "Such a cute core memory, and I totally didn't call the driver baby.",
+        "albumLink": "https://photos.app.goo.gl/jrnKs85EFSrkBmBv6"
+      },
+      {
+        "name": "The Local Cafe, GK1",
+        "lat": 28.5417,
+        "lng": 77.2386,
+        "description": "I just remember how beautiful you looked.",
+        "albumLink": "https://photos.app.goo.gl/qktbejaL4V5xU9gv9"
+      },
+      {
+        "name": "Nizamuddin Dargah",
+        "lat": 28.5915,
+        "lng": 77.2500,
+        "description": "Not you calling me by my name loudly to fit in.",
+        "albumLink": "https://photos.app.goo.gl/4Z4WUWT8FWbayydm8"
+      },
+      {
+        "name": "Kori's, GK",
+        "lat": 28.5429,
+        "lng": 77.2366,
+        "description": "Where my shrimp tempura obsession began.",
+        "albumLink": "https://photos.app.goo.gl/CrQmdmZhpZBkuQ1F9"
+      },
+      {
+        "name": "First Bnb",
+        "lat": 28.5402,
+        "lng": 77.2229,
+        "description": "It was perfect. I saw you for the first time ever. You were everything I dreamed of.",
+        "albumLink": "https://photos.app.goo.gl/4C5y3xoh4DiouPgaA"
+      },
+      {
+        "name": "Lodhi Colony",
+        "lat": 28.5911,
+        "lng": 77.2197,
+        "description": "I mean just look at you here.",
+        "albumLink": "https://photos.app.goo.gl/4cSasoJAyXygfxZ47"
+      }
+    ]
+  },
+  {
+    "city": "Gurgaon",
+    "lat": 28.4595,
+    "lng": 77.0266,
+    "description": "Click to view locations",
+    "locations": [
+      {
+        "name": "PAUL, One Horizon Center, Gurgaon",
+        "lat": 28.5033,
+        "lng": 77.0721,
+        "description": "Stays in Gurgaon were so memorable. I had the best few days of my life with you each time. ",
+        "albumLink": "https://photos.app.goo.gl/bfENjVTynNEAQKXd9"
+      },
+      {
+        "name": "Piano Man, Gurgaon",
+        "lat": 28.4645,
+        "lng": 77.0280,
+        "description": "Probably not the music we expected, but this was always something that you wanted to do. And I wanted to take you there soo bad.",
+        "albumLink": "https://photos.app.goo.gl/QXtT76hRaxsB2Chs8"
+      }
+    ]
+  },
+  {
+    "city": "Bangalore",
+    "lat": 12.9716,
+    "lng": 77.5946,
+    "description": "Click to view locations",
+    "locations": [
+      {
+        "name": "Nandi Hills",
+        "lat": 13.3702,
+        "lng": 77.6835,
+        "description": "Imagine a trip like this, only it doesn't just last one day. Us when?",
+        "albumLink": "https://photos.app.goo.gl/CzeFLoh5ogRFpoCB6"
+      },
+      {
+        "name": "Kaavu, Nallurhalli",
+        "lat": 12.9851,
+        "lng": 77.7496,
+        "description": "Vietnamese curry rice was peak food.",
+        "albumLink": "https://photos.app.goo.gl/tPvjcnJj63kpNDnb7"
+      },
+      {
+        "name": "Indiranagar",
+        "lat": 12.9718,
+        "lng": 77.6412,
+        "description": "Felt like we were here every other day.",
+        "albumLink": "https://photos.app.goo.gl/1HyycLKmLsnPZsjg8"
+      },
+      {
+        "name": "Peck, Koramangala",
+        "lat": 12.9345,
+        "lng": 77.6141,
+        "description": "Peck, or was it Felt?",
+        "albumLink": "https://photos.app.goo.gl/DHtHbjsR92dGzQGN9"
+      },
+      {
+        "name": "Koreyaki, Indiranagar",
+        "lat": 12.9717,
+        "lng": 77.6416,
+        "description": "My ramen paglu baby",
+        "albumLink": "https://photos.app.goo.gl/5hUGJzjTkk3jaQxw7"
+      },
+      {
+        "name": "Gillys Super Club, St Marks Road",
+        "lat": 12.9741,
+        "lng": 77.6033,
+        "description": "I love you for bearing with me on this",
+        "albumLink": "https://photos.app.goo.gl/bRT4ZsEvjp8yaKnP6"
+      },
+      {
+        "name": "Chez Mariannick Bakery, Siddapura",
+        "lat": 12.9550,
+        "lng": 77.7477,
+        "description": "Found and popularized by you.",
+        "albumLink": "https://photos.app.goo.gl/jBzPhTxPZYpr76s48"
+      },
+      {
+        "name": "Nallurhalli",
+        "lat": 12.9851,
+        "lng": 77.7496,
+        "description": "Your second home",
+        "albumLink": "https://photos.app.goo.gl/wXQ3sxbiBbM2yVqeA"
+      },
+      {
+        "name": "Farmhouse Kitchen and Bakery, Whitefield",
+        "lat": 12.9492,
+        "lng": 77.7477,
+        "description": "Mid food but great photos. Also, fuck anyone who ruins my baby's birthday.",
+        "albumLink": "https://photos.app.goo.gl/T8VK1iArnkD2bMv59"
+      }
+    ]
+  },
+  {
+    "city": "Chandigarh",
+    "lat": 30.7333,
+    "lng": 76.7794,
+    "description": "Sector 17 jaana, still a dream.",
+    "locations": []
+  },
+  {
+    "city": "Goa",
+    "lat": 15.2993,
+    "lng": 74.1240,
+    "description": "Place is open for discussion, but vacation pe jaana hai with you, so bad.",
+    "locations": []
+  }
+]

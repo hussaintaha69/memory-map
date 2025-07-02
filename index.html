@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Map of Memories</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffe0ec 0%, #fff7e6 100%);
+      font-family: 'Quicksand', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .birthday-header {
+      margin-top: 32px;
+      text-align: center;
+    }
+    .birthday-header h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5em;
+      color: #f67280;
+      margin-bottom: 0.2em;
+      letter-spacing: 2px;
+      text-shadow: 1px 2px 8px #fff9;
+    }
+    .birthday-header p {
+      font-size: 1.2em;
+      color: #355c7d;
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
+    .map-card {
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 8px 32px #f6728055;
+      padding: 24px 20px 12px 20px;
+      margin-bottom: 32px;
+      max-width: 90vw;
+      width: 450px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #map {
+      height: 400px;
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px #f8b19533;
+      margin-bottom: 10px;
+    }
+    .leaflet-popup-content { min-width: 180px; }
+    .popup-link {
+      display: inline-block;
+      margin: 8px 0;
+      padding: 6px 12px;
+      background: #f67280;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    .popup-link:hover {
+      background: #c06c84;
+    }
+    /* Optional: cute confetti dots */
+    .confetti {
+      position: fixed;
+      pointer-events: none;
+      width: 100vw;
+      height: 100vh;
+      top: 0; left: 0;
+      z-index: 0;
+    }
+    .confetti span {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: float 7s linear infinite;
+    }
+    @keyframes float {
+      to { transform: translateY(100vh) rotate(360deg);}
+    }
+  </style>
+</head>
+<body>
+<audio id="bg-music" autoplay loop>
+  <source src="audio.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<button id="mute-btn" style="
+  position: fixed; top: 24px; right: 24px; z-index: 1000;
+  background: #f67280; color: #fff; border: none; border-radius: 50%;
+  width: 48px; height: 48px; font-size: 1.5em; cursor: pointer; box-shadow: 0 2px 8px #f6728055;
+">
+  🔊
+</button>
+
+<div class="birthday-header">
+  <h1>Happy Birthday Love! 🎂</h1>
+  <p>
+    Here’s a map of some of our favorite memories together.<br>
+    Click on the pins to relive our special moments! 💖
+  </p>
+</div>
+<div class="map-card">
+  <div id="map"></div>
+</div>
+<!-- Optional: simple confetti effect -->
+<div class="confetti">
+  <span style="background:#f67280; width:12px; height:12px; left:10vw; animation-delay:0s;"></span>
+  <span style="background:#f8b195; width:8px; height:8px; left:30vw; animation-delay:2s;"></span>
+  <span style="background:#355c7d; width:10px; height:10px; left:50vw; animation-delay:4s;"></span>
+  <span style="background:#c06c84; width:14px; height:14px; left:70vw; animation-delay:1s;"></span>
+  <span style="background:#f67280; width:9px; height:9px; left:80vw; animation-delay:3s;"></span>
+  <span style="background:#f8b195; width:7px; height:7px; left:20vw; animation-delay:5s;"></span>
+</div>
+<div class="birthday-header">
+  <p>
+    To many more pins!
+  </p>
+</div>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  fetch('locations.json')
+    .then(response => response.json())
+    .then(data => {
+      const map = L.map('map').setView([22.9734, 78.6569], 5);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+
+      // Layer group for city markers (always visible)
+      const cityMarkers = L.layerGroup().addTo(map);
+
+      // Layer group for sub-location markers (dynamic)
+      const subLocationMarkers = L.layerGroup().addTo(map);
+
+      // Add city markers and bind click event to show sub-locations
+      data.forEach(city => {
+        const cityMarker = L.marker([city.lat, city.lng])
+          .bindPopup(`<b>${city.city}</b><br>${city.description}`);
+
+        cityMarker.on('click', () => {
+          // Clear previous sub-location markers
+          subLocationMarkers.clearLayers();
+
+          // Add sub-location markers for clicked city
+          city.locations.forEach(loc => {
+            const locMarker = L.marker([loc.lat, loc.lng])
+              .bindPopup(`
+              <b>${loc.name}</b><br>
+              <a href="${loc.albumLink}" class="popup-link" target="_blank">View Our Slideshow</a>
+              <p>${loc.description}</p>
+            `);
+            subLocationMarkers.addLayer(locMarker);
+          });
+
+          // Zoom to city view
+          map.setView([city.lat, city.lng], 12);
+        });
+
+        cityMarkers.addLayer(cityMarker);
+      });
+
+      // Optional: Add a control button to clear sub-locations and zoom out
+      const clearControl = L.control({position: 'topright'});
+      clearControl.onAdd = function() {
+        const div = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+        div.style.backgroundColor = '#f67280';
+        div.style.color = 'white';
+        div.style.padding = '6px 10px';
+        div.style.cursor = 'pointer';
+        div.style.fontWeight = 'bold';
+        div.title = 'Show all cities';
+        div.innerHTML = 'All Cities';
+        div.onclick = function() {
+          subLocationMarkers.clearLayers();
+          map.setView([22.9734, 78.6569], 5);
+        };
+        return div;
+      };
+      clearControl.addTo(map);
+    });
+</script>
+<script>
+  const music = document.getElementById('bg-music');
+  const muteBtn = document.getElementById('mute-btn');
+
+  // Set initial state
+  let isMuted = false;
+  muteBtn.textContent = '🔊';
+
+  muteBtn.onclick = function() {
+    isMuted = !isMuted;
+    music.muted = isMuted;
+    muteBtn.textContent = isMuted ? '🔇' : '🔊';
+  };
+
+  // For browsers that block autoplay, play on first user interaction
+  document.body.addEventListener('click', function playMusic() {
+    if (music.paused) {
+      music.play();
+    }
+    document.body.removeEventListener('click', playMusic);
+  });
+</script>
+</body>
+</html>
